@@ -1,6 +1,12 @@
 defmodule TermSize do
-  @moduledoc false
+  @moduledoc """
+  Reliably get the terminal window size
+  """
 
+  @doc """
+  Returns the current terminal size
+  """
+  @spec get :: {integer, integer}
   def get do
     case :os.type do
       {:win32, _} ->

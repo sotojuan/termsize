@@ -20,6 +20,8 @@ defmodule TermSize.Mixfile do
   defp deps do
     [
       {:credo, "~> 0.4", only: [:dev, :test]},
+      {:earmark, "~> 0.2", only: :dev},
+      {:ex_doc, "~> 0.11", only: :dev},
       {:porcelain, "~> 2.0"}
     ]
   end
