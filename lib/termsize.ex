@@ -25,6 +25,6 @@ defmodule TermSize do
       |> String.trim
       |> String.to_integer
 
-    %{:cols => cols, :rows => rows}
+    {cols, rows}
   end
 end
