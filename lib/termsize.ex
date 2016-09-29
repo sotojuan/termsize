@@ -4,7 +4,7 @@ defmodule TermSize do
   def get do
     case :os.type do
       {:win32, _} ->
-        "Coming soon"
+        win
       {:unix, _} ->
         tput
     end
@@ -24,6 +24,20 @@ defmodule TermSize do
       |> Map.get(:out)
       |> String.trim
       |> String.to_integer
+
+    {cols, rows}
+  end
+
+  def win do
+    path = Path.join([__DIR__, "win-term-size"])
+
+    [cols, rows] =
+      path
+      |> Porcelain.exec([])
+      |> Map.get(:out)
+      |> String.trim
+      |> String.split(~r/\r?\n/)
+      |> Enum.map(&String.to_integer/1)
 
     {cols, rows}
   end
