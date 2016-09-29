@@ -11,7 +11,7 @@ In your `mix.exs`:
 ```elixir
 defp deps do
   [
-    { :termsize, "~> 0.0.0" }
+    { :termsize, "~> 1.0.0" }
   ]
 end
 ```
