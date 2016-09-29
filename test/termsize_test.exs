@@ -1,8 +1,10 @@
 defmodule TermSizeTest do
   use ExUnit.Case
-  doctest TermSize
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  test "gets size" do
+    %{:cols => cols, :rows => rows} = TermSize.get
+
+    assert cols > 0
+    assert rows > 0
   end
 end
