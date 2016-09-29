@@ -10,7 +10,7 @@ defmodule TermSize do
     end
   end
 
-  def tput do
+  defp tput do
     cols =
       "tput"
       |> Porcelain.exec(["cols"])
@@ -28,7 +28,7 @@ defmodule TermSize do
     {cols, rows}
   end
 
-  def win do
+  defp win do
     path = Path.join([__DIR__, "win-term-size"])
 
     [cols, rows] =
