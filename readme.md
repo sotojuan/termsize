@@ -20,6 +20,14 @@ Then run `mix deps.get`.
 
 ## Usage
 
+Make sure you add `termsize` to your applications:
+
+```elixir
+def application do
+  [applications: [:logger, :termsize]]
+end
+```
+
 ```elixir
 IO.puts TermSize.get # {151, 32}
 
