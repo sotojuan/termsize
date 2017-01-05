@@ -10,13 +10,13 @@ defmodule TermSize do
   def get do
     case :os.type do
       {:win32, _} ->
-        win
+        win()
       {:unix, _} ->
-        tput
+        tput()
     end
   end
 
-  defp tput do
+  defp tput() do
     cols =
       "tput"
       |> Porcelain.exec(["cols"])
@@ -34,7 +34,7 @@ defmodule TermSize do
     {cols, rows}
   end
 
-  defp win do
+  defp win() do
     path = Path.join([__DIR__, "win-term-size"])
 
     [cols, rows] =
